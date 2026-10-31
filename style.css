@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #101828;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-container {
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+}
+
+#game {
+    width: min(100vw, 400px);
+    height: min(78dvh, 550px);
+    min-height: 360px;
+
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+
+    background-image: url("assets/background.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: 3px solid white;
+    border-radius: 12px;
+
+    touch-action: none;
+}
+
+#player {
+  position: absolute;
+  left: 65px;
+  top: 220px;
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#obstacle {
+  position: absolute;
+  right: -80px;
+  top: 0;
+  width: 110px;
+  height: 100%;
+  z-index: 2;
+}
+
+#obstacle::before,
+#obstacle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#obstacle::before {
+  top: 0;
+  height: var(--gap-top, 150px);
+  background-image: url("assets/pillar-top.png");
+}
+
+#obstacle::after {
+  bottom: 0;
+  height: var(--gap-bottom, 190px);
+  background-image: url("assets/pillar-bottom.png");
+}
+
+#score {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #e6d5d5;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#message {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  z-index: 5;
+}
+
+#message h2 {
+  font-size: 36px;
+}
+
+button {
+  padding: 13px 28px;
+  border: none;
+  border-radius: 8px;
+  background: #ffcc00;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.instructions {
+  margin-top: 18px;
+  color: #ccc;
+}
+
+
+#game {
+  width: min(90vw, 400px);
+  height: 550px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+
+  background-image: url("assets/background.jpeg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 4px solid white;
+  border-radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#player {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+button {
+    touch-action: manipulation;
+}
+
+#gameLogo {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 65%;
+    max-width: 260px;
+    height: auto;
+
+    object-fit: contain;
+    z-index: 10;
+
+    pointer-events: none;
+}
+
